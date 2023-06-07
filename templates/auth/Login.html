@@ -1,0 +1,26 @@
+{% extends 'login.html' %}
+
+<!--start title-->
+{% block title %}
+LOGIN
+{% endblock %}
+<!--end title block-->
+
+{% block contant %}
+ 
+
+ <div class="container col-md-5 offset-3">
+     <form action="" class="form-group" method="POST">
+         {% csrf_token %}
+         <h3 class="mt-5 text-center">LOGIN PAGE</h3> <hr><br>
+         <br>
+         <input type="text" class="form-control" name="username" id="" placeholder="Enter your user name">
+         <br>
+        
+         <input type="password" class="form-control" name="password" id="" placeholder="Enter Password">
+            <br>
+         <input type="submit" value="LOGIN" class="btn btn-info w-100">
+
+     </form>
+ </div>
+{% endblock %}

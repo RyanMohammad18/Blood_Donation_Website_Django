@@ -1,0 +1,725 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="{% static 'Images/3.png' %}" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
+
+
+
+
+
+    <title>
+        {% block title %}
+
+        DROPLET
+        {% endblock %}
+    </title>
+
+
+
+</head>
+
+<body>
+
+    <!--Start Navbar-->
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">DROPLET</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto ml-auto ">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'adminhomepage' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+            
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'search' %}">Blood-Bank</a>
+                </li>
+
+
+               
+
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'Volunteerslist' %}">volunteerlist</a>
+                </li>
+
+
+            </ul>
+
+        </div>
+
+        <div>
+
+            <ul class="navbar-nav mr-auto ml-auto ">
+                {% if user.is_authenticated %}
+                <li class="nav-item ">
+                    <a class="nav-link" href="{% url 'userlogin' %}">Logout<span class="sr-only">(current)</span></a>
+                </li>
+                {% else %}
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'userlogin' %}">LOGOUT</a>
+                </li>
+
+
+                {% endif %}
+
+            </ul>
+
+
+        </div>
+    </nav>
+    <!--end navbar-->
+
+
+    {% block contant %}
+
+    <!--Link of css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="shortcut icon" href="{% static 'Images/3.png' %}" type="image/x-icon">
+
+    <link rel="stylesheet" href="{% static 'admin/css/all.min.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'admin/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href=" {% static 'admin/css/uikit.min.css' %}">
+    <link rel="stylesheet" href=" {% static 'admin/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/css/navbar-fixed.css' %}">
+
+    <link rel="stylesheet" href="{% static 'cssnew/mainstyle.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
+
+
+
+
+    <section id="showcase" class="bg-dark">
+
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+
+            <ol class="carousel-indicators">
+                <li data-slide-to="0" data-target="#myCarousel" class="active"></li>
+                <li data-slide-to="1" data-target="#myCarousel"></li>
+                <li data-slide-to="2" data-target="#myCarousel"></li>
+            </ol>
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item carousel-img-1 active">
+                    <div class="dark-overlay"></div>
+                    <div class="container">
+                        <div class="carousel-caption mb-5 pb-5">
+                            <h2 class="display-4">Donate Blood</h2>
+                            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
+                                provident
+                                adipisci ducimus corrupti eos magnam ullam id, nulla, dicta eveniet, voluptate
+                                veniam
+                                soluta. .</p>
+                            <a href="#" class="btn btn-danger">Learn More</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="carousel-item carousel-img-2">
+                    <div class="dark-overlay"></div>
+                    <div class="container">
+                        <div class="carousel-caption mb-5 pb-5 text-right">
+                            <h2 class="display-4">Save Life</h2>
+                            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
+                                provident
+                                adipisci ducimus corrupti eos magnam ullam id, nulla, dicta eveniet, voluptate
+                                veniam
+                                soluta. .</p>
+                            <a href="#" class="btn btn-warning">Learn More</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="carousel-item carousel-img-3">
+                    <div class="dark-overlay"></div>
+                    <div class="container">
+                        <div class="carousel-caption mb-5 pb-5 text-left">
+                            <h2 class="display-4 ">Blood Donation</h2>
+                            <p class="lead ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
+                                provident
+                                adipisci ducimus corrupti eos magnam ullam id, nulla, dicta eveniet, voluptate
+                                veniam
+                                soluta. .</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <a href="#myCarousel" class="carousel carousel-control-prev" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a href="#myCarousel" class="carousel carousel-control-next" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+
+        </div>
+
+        </div>
+
+    </section>
+
+
+    <!--After Carousel part-->
+    <section id="After_carousel_part">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 align-self-center mt-5 mb-5" id="headline">
+                    <h2>HELPING PEOPLE FROM 40 YEARS</h2>
+                    <p class="lead pt-4">You can give blood at any of our blood donation venues all over the world. We
+                        have total sixty thousands donor centers and visit thousands of other venues on various
+                        occasions.</p>
+                </div>
+                <div class="col ">
+                    <a href="#" class="btn btn-outline-danger align-self-center " id="Button1">Request Appointment</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Donation Process-->
+
+    <section id="Donation_Process">
+        <div class="container ">
+            <div class="row mt-5 ">
+                <h2>Donation Process</h2>
+
+            </div>
+            <div class="rows">
+                <div class="card">
+                    <div class="card-image img1">
+                        <div class="img_text">
+                            <h4>1</h4>
+                        </div>
+                    </div>
+                    <h3 class="mt-4 text-center text-capitalize">REGISTRATION</h3>
+                    <p class="lead mt-2 text-center p-1">You need to complete a very simple registration form. Which
+                        contains all required contact information to enter in the donation process.</p>
+                </div>
+                <div class="card">
+                    <div class="card-image img1">
+                        <div class="img_text">
+                            <h4>2</h4>
+                        </div>
+                    </div>
+                    <h3 class="mt-4 text-center">SCREENING</h3>
+                    <p class="lead mt-2 text-center p-1">You need to complete a very simple registration form. Which
+                        contains all required contact information to enter in the donation process.</p>
+                </div>
+                <div class="card">
+                    <div class="card-image img1">
+                        <div class="img_text">
+                            <h4>3</h4>
+                        </div>
+                    </div>
+                    <h3 class="mt-4 text-center">DONATION</h3>
+                    <p class="lead mt-2 text-center p-1">You need to complete a very simple registration form. Which
+                        contains all required contact information to enter in the donation process.</p>
+                </div>
+                <div class="card">
+                    <div class="card-image img1">
+                        <div class="img_text">
+                            <h4>4</h4>
+                        </div>
+                    </div>
+                    <h3 class="mt-4 text-center">REFRESHING</h3>
+                    <p class="lead mt-2 text-center p-1">You need to complete a very simple registration form. Which
+                        contains all required contact information to enter in the donation process.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--Counter_Term-->
+    <section id="CounterTerm">
+
+        <div class="container mt-5 ">
+
+            <div class="row mt-5 p-5">
+
+                <div class="col ">
+                    <div class="counter-block text-center">
+                        <i class="fa fa-heartbeat icon"></i>
+                        <div class="counter">2578</div>
+                        <h4>Success Smile</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="counter-block text-center">
+                        <i class="fa fa-stethoscope icon"></i>
+                        <div class="counter">3235</div>
+
+                        <h4>HAPPY DONORS</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="counter-block text-center">
+                        <i class="fa fa-users icon"></i>
+                        <div class="counter">1364</div>
+
+
+                        <h4>TOTAL AWARDS</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="counter-block text-center">
+                        <i class="fa fa-building icon"></i>
+                        <div class="counter" id="counter">3568</div>
+
+                        <h4>RECIPIENT</h4>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+    <section id="Video_player">
+
+        <div class="container">
+            <h2 class="text-center ml-5">Video Gallery</h2>
+
+            <div class="row">
+
+                <div class="col">
+                    <div class="feature-img mt-5">
+                        <img src="{% static 'admin/Images/5.jpg' %}" alt="" width="100%">
+                        <img src="{% static 'Images/6.jpg' %}" alt="" width="50%" class="play-btn"
+                            onclick="playvideo()">
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="small-img-row">
+                        <div class="small-img">
+                            <img src="{% static 'admin/Images/5.jpg' %}" alt="" width="25%">
+                            <img src="{% static 'Images/6.jpg' %}" alt="" width="25%" class="play-btn"
+                                onclick="playvideo()">
+
+                        </div>
+                        <p>1. Click To watch the videos</p>
+
+
+                    </div>
+                    <div class="small-img-row">
+                        <div class="small-img">
+                            <img src="{% static 'admin/Images/5.jpg' %}" alt="" width="25%">
+                            <img src="{% static 'Images/6.jpg' %}" alt="" width="50px" class="play-btn"
+                                onclick="playvideo()">
+
+                        </div>
+                        <p>2. Click To watch the videos</p>
+
+
+                    </div>
+                    <div class="small-img-row">
+                        <div class="small-img">
+                            <img src="{% static 'admin/Images/5.jpg' %}" alt="" width="25%">
+                            <img src="{% static 'Images/6.jpg' %}" alt="" width="25%" class="play-btn"
+                                onclick="playvideo()">
+
+                        </div>
+                        <p>3. Click To watch the videos</p>
+
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+        <section id="ImageGallery">
+            <div class="container">
+                <h2 class="lead mt-3 text-center w-100 ml-auto">Image Galllery</h2>
+                <div class="row ml-auto">
+
+                    <div class="col">
+                        <div class="imgbox">
+                            <img src="{%static 'Images/8.jpg' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="imgbox" id="imgbox">
+                            <img src="{%static 'Images/10.jpg' %}" alt="">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="imgbox">
+                            <img src="{%static 'Images/9.jpg' %}" alt="">
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <div class="col">
+                        <div class="imgbox">
+                            <img src="{%static 'Images/8.jpg' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="imgbox">
+                            <img src="{%static 'Images/10.jpg' %}" alt="">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="imgbox">
+                            <img src="{%static 'Images/9.jpg' %}" alt="">
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="col">
+                        <div class="imgbox">
+                            <img src="{%static 'Images/8.jpg' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="imgbox">
+                            <img src="{%static 'Images/10.jpg' %}" alt="">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="imgbox">
+                            <img src="{%static 'Images/9.jpg' %}" alt="">
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+                
+            </div>
+        </section>
+
+
+        <div class="video_player" id="video_player">
+            <video width="100%" controls id="myvideo">
+                <source src="{% static 'video/2.mkv' %}">
+            </video>
+            <img src="{% static 'Images/4.png' %}" alt="" class="close_btn" onclick="stopvideo()">
+        </div>
+
+
+    </section>
+
+ <!--Pagination-->
+ <div class="container">
+    <nav aria-label="Page navigation example">
+        <p>Page Number: </p>
+        <ul class="pagination">
+
+            <li class="page-item"><a class="page-link" href="{% url 'adminhomepage' %}">1</a></li>
+            <li class="page-item"><a class="page-link" href="{% url 'search' %}">2</a></li>
+            <li class="page-item"><a class="page-link" href="{% url 'Volunteerslist' %}">3</a></li>
+            
+
+        </ul>
+    </nav>
+
+
+</div>
+
+    <footer class="bg-dark text-center text-white mt-4">
+        <!-- Grid container -->
+        <div class="container ">
+
+
+            <!-- Section: Social media -->
+            <section class="mt-4">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-facebook-f"></i></a>
+
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-twitter"></i></a>
+
+                <!-- Google -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-google"></i></a>
+
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-instagram"></i></a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-linkedin-in"></i></a>
+
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-github"></i></a>
+            </section>
+            <!-- Section: Social media -->
+
+            <!-- Section: Form -->
+            <section class="">
+                <form action="">
+                    <!--Grid row-->
+                    <div class="row d-flex justify-content-center">
+                        <!--Grid column-->
+                        <div class="col-auto">
+                            <p class="pt-2">
+                                <strong>Sign up for our newsletter</strong>
+                            </p>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-md-5 col-12">
+                            <!-- Email input -->
+                            <div class="form-outline form-white mb-4">
+                                <input type="email" id="form5Example21" class="form-control" />
+                                <label class="form-label" for="form5Example21">Email address</label>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-auto">
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-outline-light mb-4">
+                                Subscribe
+                            </button>
+                        </div>
+                        <!--Grid column-->
+                    </div>
+                    <!--Grid row-->
+                </form>
+            </section>
+            <!-- Section: Form -->
+
+            <!-- Section: Text -->
+            <section class="mb-4">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
+                    repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
+                    eum harum corrupti dicta, aliquam sequi voluptate quas.
+                </p>
+            </section>
+            <!-- Section: Text -->
+
+            <!-- Section: Links -->
+            <section class="">
+                <!--Grid row-->
+                <div class="row">
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Links</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="#!" class="text-white">Link 1</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 2</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 3</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 4</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Links</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="#!" class="text-white">Link 1</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 2</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 3</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 4</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+
+
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Links</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="#!" class="text-white">Link 1</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 2</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 3</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 4</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+            </section>
+            <!-- Section: Links -->
+        </div>
+        <!-- Grid container -->
+        <div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 200px">
+            <iframe src="https://maps.google.com/maps?q=chicago&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                style="border:0" allowfullscreen></iframe>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2020 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+
+
+    <!--Google Maps-->
+
+
+    <script>
+
+
+
+
+
+        var counter = document.getElementById("counter");
+
+
+        $(document).ready(function () {
+            counter.counterUp({
+                delay: 10,
+                time: 1200,
+            });
+
+        });
+
+        var video_player = document.getElementById("video_player");
+        var myvideo = document.getElementById("myvideo");
+
+        function stopvideo() {
+            video_player.style.display = "none";
+            myvideo.muted = true;
+
+        }
+
+        function playvideo(file) {
+
+            myvideo.play();
+            video_player.style.display = "block";
+            myvideo.muted = true;
+
+            myvideo.requestFullscreen();
+
+        }
+
+    </script>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
+
+    <script src="{% static 'admin/js/jquery.counterup.min.js' %}"></script>
+
+
+    <script src="{% static 'admin/js/bootstrap.min.js' %}"></script>
+
+
+    <script src="{% static 'admin/js/navbar-fixed.js' %}"></script>
+    <script src="{% static 'admin/js/jquery-1.8.0.min.js' %}"></script>
+    <script src="{% static 'admin/js/uikit.min.js' %}"></script>
+    <script src="{% static 'admin/js/uikit-icons.min.js' %}"></script>
+
+    <script src="{% static 'admin/js/counter.js' %}"></script>
+
+
+    <script src="{% static 'admin/js/login.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
+
+
+    {% endblock %}
+</body>
+
+</html>

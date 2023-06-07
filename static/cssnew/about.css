@@ -1,0 +1,12 @@
+#about {
+
+    background: url(../Images/12.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 200px;
+
+}
+
+#about h2{
+    color: white;
+}

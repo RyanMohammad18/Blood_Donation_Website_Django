@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contant %}
+
+<div class="container">
+    <h2 class="text-center pt-5 text-danger">Volunteer-List</h2>
+    {% for msg in messages %}
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Hey!</strong>{{msg}}
+
+    </div>
+
+    {% endfor %}
+    
+    <a class="btn btn-outline-dark text-center float-right" href="{% url 'useraddvolunteer' %}">ADD VOLUNTEER +</a>
+    <br>
+    <div class="card-body">
+        <table class="table table-bordered table-striped ">
+            <thead>
+                <tr class="bg-danger text-white text-center">
+                    
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Blood-Group</th>
+                    <th>Email</th>
+                    <th class="w-25 ">Images</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in Prods %}
+                <tr>
+                    
+                    <td>{{ p.Name }}</td>
+                    <td>{{ p.Address }}</td>
+                    <td>{{ p.BloodGroup }}</td>
+                    <td>{{ p.Email }}</td>
+
+                    <td>
+                        {% if p.image %}
+                        <img style="width: 50%;height: 70px;" src="{{ p.image.url }}" alt="" class="mx-auto d-block">
+                        {% endif %}
+                    </td>
+
+
+                    
+
+                </tr>
+                {% endfor %}
+
+                
+            </tbody>
+            
+                
+            
+        </table>
+    </div>
+</div>
+
+
+    {% endblock %}

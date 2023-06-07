@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+<!--start title-->
+{% block title %}
+    Blood Bank Creation
+{% endblock %}
+<!--end title block-->
+
+{% block contant %} 
+
+    <div class="mt-5">
+        {% for msg in messages %}
+
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Hey!</strong>{{msg}}
+
+            </div>
+
+            {% endfor %}
+
+       
+        <form action="" method="POST"  class="form-group mr-auto ml-auto col-md-6" enctype='multipart/form-data'>
+            {% csrf_token %}
+                       
+            
+            <h3 class="text-center text-danger">User Create Blood Group</h3>
+            <input type="text" name="title" class="form-control" id="title" placeholder="Enter your blood">
+            <br>
+            <input type="text" name="desc" class="form-control" id="desc" placeholder="Enter your location">
+            <br>
+            <input type="text" name="descc" class="form-control" id="descc" placeholder="Enter your email">
+            <br>
+            <label for="" class="form-label">Image</label>
+            <input type="file"  name="image" class="form-control" >
+            <br>
+            <input type="submit" value="Submit" class="btn btn-info form-control">
+        </form>
+        
+    </div>
+
+{% endblock %}

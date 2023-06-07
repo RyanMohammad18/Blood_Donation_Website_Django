@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contant %}
+<div class="container text-center mt-5">
+  <h2>This is the single blog page</h2>
+</div>
+
+<section id="allblog" class="text-center ">
+
+
+  <div class="card mb-3 ml-5 text-center mt-5" style="max-width: 100%;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{% static 'Images/12.jpg' %}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">International Blood Donation Day-2017</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+            content.
+            This content is a little bit longer. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
+            earum. Maxime pariatur ut fugit inventore fugiat labore, repellendus nobis temporibus nesciunt nemo
+            aspernatur quisquam ullam? Sunt quisquam recusandae corrupti mollitia. </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container text-center">
+    <nav aria-label="Page navigation example text-center">
+     
+        <ul class="pagination">
+
+            <li class="page-item"><a class="page-link" href="{% url 'singleblogpage' %}">1</a></li>
+            <li class="page-item"><a class="page-link" href="{% url 'singleblogpage2' %}">2</a></li>
+            <li class="page-item"><a class="page-link" href="{% url 'singleblogpage3' %}">3</a></li>
+            
+
+        </ul>
+    </nav>
+
+
+</div>
+
+
+</section>
+
+  {% endblock %}

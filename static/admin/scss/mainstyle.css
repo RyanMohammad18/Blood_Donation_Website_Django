@@ -1,0 +1,118 @@
+#showcase{
+    height: 550px;
+}
+   
+
+
+h2{
+    clear: both;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+}
+#After_carousel_part{
+    background-color: #f2f4f2;
+  
+}
+
+#Button1{
+    margin-left: 30%;
+    margin-top: 25%;
+    position: relative;
+    padding-left: 100px;
+   padding-right: 100px;
+   font-size: 22px;
+    font-weight: 700;
+}
+.carousel-item{
+    height: 550px;
+    width: 100%;
+
+}
+.carousel-img-1{
+    background: url('../Images/1.jpeg');
+    background-size: cover;
+}
+.carousel-img-2{
+    background: url('../Images/2.jpeg');
+    background-size: cover;
+}
+.carousel-img-3{
+    background: url('../Images/6.jpg');
+    background-size: cover;
+}
+.dark-overlay{
+    background: rgba(0,0,0,0.7);
+    min-height: 700px;
+}
+
+#Donation_Process h2{
+         letter-spacing: 5px;
+            color: red;
+            font-size: 50px;
+            font-weight: lighter;
+}
+#Donation_Process i{
+    font-size: 30px;
+    color: red;
+}
+.rows{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    flex-wrap: nowrap;
+    
+}
+.card{
+    margin: 10px;
+    border: 3px solid red;
+    height: 500px;
+   border-radius: 20px;
+   background-color: #f2f4f2;
+    
+}
+
+.card-image{
+    height: 200px;
+    background-color: aqua;
+    border-radius: 20px;
+    
+   
+}
+.img_text h4{
+    background-color: red;
+    color: #f2f4f2;
+    width: fit-content;
+    padding: 5px 20px;
+    font-size: xx-large;
+    border-radius: 10px;
+    margin-bottom: 5px;
+   opacity: 0.8;
+}
+.img1 {
+    background: url(../Images/8.jpg);
+    background-size: cover;
+}
+#Donation_Process h3{
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+#CounterTerm h4{
+
+    font-weight: bolder;
+
+}
+
+@media(max-width: 767px){
+    #Button1{
+        margin-left: 10px;
+        padding: 10px;
+        position: relative;
+        margin-top: 0%;
+
+    }
+}
+
+
+ 
